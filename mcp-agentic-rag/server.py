@@ -73,7 +73,7 @@ def bright_data_web_search_tool(query: str) -> list[str]:
     # Format query and make request
     formatted_query = "+".join(query.split(" "))
     url = f"https://www.google.com/search?q={formatted_query}&brd_json=1&num=50"
-    response = requests.get(url, proxies=proxies, verify=False)
+    response = requests.get(url, proxies=proxies, verify=True)
 
     # Return organic search results
     return response.json()['organic']
