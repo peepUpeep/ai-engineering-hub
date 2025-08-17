@@ -38,7 +38,7 @@ class BrightDataWebSearchTool(BaseTool):
         query = "+".join(title.split(" "))
         
         url = f"https://www.google.com/search?q=%22{query}%22&tbs=qdr:w&brd_json=1&num={total_results}"
-        response = requests.get(url, proxies=proxies, verify=False)
+        response = requests.get(url, proxies=proxies, verify=True)
 
         return response.json()['organic']
 
