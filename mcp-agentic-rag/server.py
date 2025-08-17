@@ -54,7 +54,7 @@ def bright_data_web_search_tool(query: str) -> list[str]:
 
     # Load environment variables and configure SSL
     load_dotenv()
-    ssl._create_default_https_context = ssl._create_unverified_context
+    ssl._create_default_https_context = ssl.create_default_context
 
     # Bright Data configuration
     host = 'brd.superproxy.io'
