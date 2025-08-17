@@ -55,8 +55,9 @@ def run_code_and_show_plot() -> str:
     """
     Run the code in stock_analysis.py and generate the plot
     """
-    with open('stock_analysis.py', 'r') as f:
-        exec(f.read())
+    import subprocess, sys
+    completed = subprocess.run([sys.executable, 'stock_analysis.py'], capture_output=True, text=True)
+    return completed.stdout or "Script executed successfully."
 
 # Run the server locally
 if __name__ == "__main__":
