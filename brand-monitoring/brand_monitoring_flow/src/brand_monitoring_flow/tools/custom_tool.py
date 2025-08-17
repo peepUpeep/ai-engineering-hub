@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-ssl._create_default_https_context = ssl._create_unverified_context
+ssl._create_default_https_context = ssl.create_default_context
 
 class BrightDataWebSearchToolInput(BaseModel):
     """Input schema for BrightDataWebSearchTool."""
