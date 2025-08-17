@@ -17,7 +17,7 @@ def main():
     }
     
     try:
-        response = requests.post(f"{SERVER_URL}/predict", json=payload)
+        response = requests.post(f"{SERVER_URL.replace('http://', 'https://')}/predict", json=payload, verify=True, timeout=10)
         response.raise_for_status()  # Raise an exception for bad status codes
         
         result = response.json()['output']['raw']
